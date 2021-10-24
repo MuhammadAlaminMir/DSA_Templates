@@ -1,3 +1,5 @@
+// time complexity log(n)
+
 int binary_search(int arr[], int size, int key){
     int lo = 0, hi = size - 1, mid;
     while(lo <= hi){
@@ -10,10 +12,10 @@ int binary_search(int arr[], int size, int key){
 }
 
 int search_Lower_Bound(int arr[], int size, int key){
-    int lo = 0, hi = size - 1, mid, indx = -1;
+    int lo = 0, hi = size - 1, mid, index = -1;
     while(lo <= hi){
         mid = (lo + hi ) >> 1;
-        if(key == arr[mid]) indx = mid, hi = mid -1;
+        if(key == arr[mid]) index = mid, hi = mid -1;
         else if( key arr[mid]) lo = mid + 1;
         else hi = mid - 1;
     }

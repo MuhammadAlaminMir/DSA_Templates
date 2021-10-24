@@ -1,0 +1,48 @@
+// This Algorithm generate all prime factors of a number
+// Time complexity of this Algorithm is O(sqrt(n) / ln(sqrt(n)) + log (n))
+// Sieve Prime Generation required for this Algorithm
+
+const int MX = 1e7 + 123;
+bitset<MX> isPrime;
+vector<int> primes;
+
+void primeGen (int n){
+    for(int i = 3; i <= n; i += 2)
+        isPrime[i] = 1;
+    int sq = sqrt(n);
+
+    for(int i = 3; i <= sq; i += 2){
+        if(isPrime[i]){
+            for(int j = (i * i); j <= n; j += (i + i)){
+                isPrime[j] = 0;
+            }
+        }
+    }
+    isPrime[2] = 1;
+    primes.push_back(2);
+    for(int i = 3; i <= n; i += 2){
+        if(isPrime[i])
+            primes.push_back(i);
+    }
+}
+
+// Prime Factorization Algorithm:
+
+vector<long long> prime_factorization(long long n){
+    vector<long long> res;
+
+    for(auto p : primes){
+        if(1ll * p * p > n) break;
+        if(n % p == 0){
+            while(n % p == 0){
+                res.push_back(p);
+                n /= p;
+            }
+        }
+
+    }
+    if (n > 1)
+        res.PB(n);
+    return res;
+}
+

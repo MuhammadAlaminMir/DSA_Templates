@@ -1,4 +1,5 @@
-// Normal Sieve 
+// Normal Sieve
+
 const int MX = 1e7 + 123;
 bool isPrime[MX];
 vector<int> primes;
@@ -24,6 +25,7 @@ void primeGen (int n){
 }
 
 // Bitset Sieve (Best PrimeGen Algorithm)
+// time complexity of this Algorithm is almost O(n log (log n));
 
 const int MX = 1e7 + 123;
 bitset<MX> isPrime;
