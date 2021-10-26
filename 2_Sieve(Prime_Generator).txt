@@ -1,5 +1,7 @@
 // Normal Sieve
 
+prime counting formula: 1.25506 * (x / log(x))
+
 const int MX = 1e7 + 123;
 bool isPrime[MX];
 vector<int> primes;
